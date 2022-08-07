@@ -39,6 +39,7 @@ export const sizes = {
   h2: 24,
   h3: 18,
   body: 14,
+  caption: 12,
   radius: 16,
 };
 

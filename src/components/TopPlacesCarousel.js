@@ -1,56 +1,39 @@
 import React from 'react';
-import {
-  FlatList,
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import {colors, shadow, sizes, spacing} from '../constants/theme';
-import FavoriteButton from './FavoriteButton';
+import {Text, View, StyleSheet} from 'react-native';
+import {colors, sizes} from '../constants/theme';
 import {useNavigation} from '@react-navigation/native';
 import {SharedElement} from 'react-navigation-shared-element';
+import Carousel from './shared/Carousel';
+import Card from './shared/Card/Card';
+import CardMedia from './shared/Card/CardMedia';
+import CardFavoriteIcon from './shared/Card/CardFavoriteIcon';
 
-const CARD_WIDTH = sizes.width - 80;
 const CARD_HEIGHT = 200;
-const CARD_WIDTH_SPACING = CARD_WIDTH + spacing.l;
 
 const TopPlacesCarousel = ({list}) => {
   const navigation = useNavigation();
   return (
-    <FlatList
-      data={list}
-      horizontal
-      snapToInterval={CARD_WIDTH_SPACING}
-      decelerationRate="fast"
-      showsHorizontalScrollIndicator={false}
-      keyExtractor={i => i.id}
-      renderItem={({item, index}) => {
+    <Carousel
+      items={list}
+      renderItem={({item, style}) => {
         return (
-          <TouchableOpacity
+          <Card
+            style={[styles.card, style]}
+            shadowType="dark"
             onPress={() => {
               navigation.navigate('TripDetails', {trip: item});
-            }}
-            style={{
-              marginLeft: spacing.l,
-              marginRight: index === list.length - 1 ? spacing.l : 0,
             }}>
-            <View style={[styles.card, shadow.dark]}>
-              <FavoriteButton style={styles.favorite} />
-              <SharedElement
-                id={`trip.${item.id}.image`}
-                style={StyleSheet.absoluteFillObject}>
-                <View style={styles.imageBox}>
-                  <Image source={item.image} style={styles.image} />
-                </View>
-              </SharedElement>
-              <View style={styles.titleBox}>
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.location}>{item.location}</Text>
-              </View>
+            <CardFavoriteIcon active={false} onPress={() => {}} />
+            <SharedElement
+              id={`trip.${item.id}.image`}
+              style={StyleSheet.absoluteFillObject}>
+              <CardMedia source={item.image} borderBottomRadius />
+            </SharedElement>
+            <View style={styles.titleBox}>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.location}>{item.location}</Text>
             </View>
-          </TouchableOpacity>
+          </Card>
         );
       }}
     />
@@ -59,28 +42,7 @@ const TopPlacesCarousel = ({list}) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: CARD_WIDTH,
     height: CARD_HEIGHT,
-    marginVertical: 10,
-    backgroundColor: colors.white,
-    borderRadius: sizes.radius,
-  },
-  favorite: {
-    position: 'absolute',
-    top: spacing.m,
-    right: spacing.m,
-    zIndex: 1,
-  },
-  imageBox: {
-    width: CARD_WIDTH,
-    height: CARD_HEIGHT,
-    borderRadius: sizes.radius,
-    overflow: 'hidden',
-  },
-  image: {
-    width: CARD_WIDTH,
-    height: CARD_HEIGHT,
-    resizeMode: 'cover',
   },
   titleBox: {
     position: 'absolute',

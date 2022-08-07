@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Icon from './Icon';
-import {sizes, spacing} from '../constants/theme';
+import {sizes, spacing} from '../../constants/theme';
 
 const MainHeader = ({title}) => {
   const insets = useSafeAreaInsets();
