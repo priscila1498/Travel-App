@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import {colors, sizes, spacing} from '../../constants/theme';
+import {colors, sizes, spacing} from '../../../constants/theme';
 import * as Animatable from 'react-native-animatable';
 import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 import CustomHandler from './CustomHandler';
@@ -12,12 +12,12 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
-import Icon from '../shared/Icon';
-import Divider from '../shared/Divider';
-import SectionHeader from '../shared/SectionHeader';
-import RatingOverall from '../shared/Rating/RatingOverall';
+import Icon from '../../shared/Icon';
+import Divider from '../../shared/Divider';
+import SectionHeader from '../../shared/SectionHeader';
+import RatingOverall from '../../shared/Rating/RatingOverall';
 import HotelsCarousel from './HotelsCarousel';
-import Reviews from '../Reviews/Reviews';
+import Reviews from '../../Reviews/Reviews';
 
 const AnimatedDivider = Animated.createAnimatedComponent(Divider);
 

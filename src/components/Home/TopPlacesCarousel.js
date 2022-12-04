@@ -1,12 +1,12 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {colors, sizes} from '../constants/theme';
+import {colors, sizes} from '../../constants/theme';
 import {useNavigation} from '@react-navigation/native';
 import {SharedElement} from 'react-navigation-shared-element';
-import Carousel from './shared/Carousel';
-import Card from './shared/Card/Card';
-import CardMedia from './shared/Card/CardMedia';
-import CardFavoriteIcon from './shared/Card/CardFavoriteIcon';
+import Carousel from '../shared/Carousel';
+import Card from '../shared/Card/Card';
+import CardMedia from '../shared/Card/CardMedia';
+import CardFavoriteIcon from '../shared/Card/CardFavoriteIcon';
 
 const CARD_HEIGHT = 200;
 

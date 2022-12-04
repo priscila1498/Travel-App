@@ -1,19 +1,25 @@
 import React from 'react';
-import {Image, TouchableOpacity} from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 import icons from '../../constants/icons';
 
-const Icon = ({onPress, icon, style, size = 32}) => {
+const Icon = ({onPress, icon, containerStyle, viewStyle, style, size = 32}) => {
   const image = (
-    <Image
-      source={icons[icon]}
-      style={[{width: size, height: size, resizeMode: 'cover'}, style]}
-    />
+    <View style={viewStyle}>
+      <Image
+        source={icons[icon]}
+        style={[{width: size, height: size, resizeMode: 'cover'}, style]}
+      />
+    </View>
   );
 
   if (onPress) {
-    return <TouchableOpacity onPress={onPress}>{image}</TouchableOpacity>;
+    return (
+      <TouchableOpacity onPress={onPress} style={containerStyle}>
+        {image}
+      </TouchableOpacity>
+    );
   }
-  return image;
+  return <View style={containerStyle}>{image}</View>;
 };
 
 export default Icon;

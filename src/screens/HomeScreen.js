@@ -3,10 +3,10 @@ import {View, StyleSheet, ScrollView} from 'react-native';
 import {colors} from '../constants/theme';
 import MainHeader from '../components/shared/MainHeader';
 import ScreenHeader from '../components/shared/ScreenHeader';
-import TopPlacesCarousel from '../components/TopPlacesCarousel';
+import TopPlacesCarousel from '../components/Home/TopPlacesCarousel';
 import {PLACES, TOP_PLACES} from '../data';
 import SectionHeader from '../components/shared/SectionHeader';
-import TripsList from '../components/TripsList';
+import TripsList from '../components/Home/TripsList';
 
 const HomeScreen = () => {
   return (

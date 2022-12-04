@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {colors, sizes, spacing} from '../constants/theme';
+import {colors, shadow, sizes, spacing} from '../constants/theme';
 import Icon from '../components/shared/Icon';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import TripDetailsCard from '../components/TripDetailsCard/TripDetailsCard';
+import TripDetailsCard from '../components/TripDetails/TripDetailsCard/TripDetailsCard';
 import * as Animatable from 'react-native-animatable';
-import TripDetailsCarousel from '../components/TripDetailsCarousel';
+import TripDetailsCarousel from '../components/TripDetails/TripDetailsCarousel';
 import FavoriteButton from '../components/shared/FavoriteButton';
 
 const TripDetailsScreen = ({navigation, route}) => {
@@ -21,8 +21,9 @@ const TripDetailsScreen = ({navigation, route}) => {
         duration={400}
         easing="ease-in-out">
         <Icon
-          icon="ArrowLeft"
-          style={styles.backIcon}
+          icon="Back"
+          viewStyle={styles.backIcon}
+          size={24}
           onPress={navigation.goBack}
         />
       </Animatable.View>
@@ -67,13 +68,16 @@ const styles = StyleSheet.create({
     left: spacing.l,
     zIndex: 1,
   },
+  backIcon: {
+    backgroundColor: colors.white,
+    padding: 4,
+    borderRadius: sizes.radius,
+    ...shadow.light,
+  },
   favoriteButton: {
     position: 'absolute',
     right: spacing.l,
     zIndex: 1,
-  },
-  backIcon: {
-    tintColor: colors.white,
   },
 });
 

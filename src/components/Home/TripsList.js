@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import {colors, sizes, spacing} from '../constants/theme';
-import FavoriteButton from './shared/FavoriteButton';
+import {colors, sizes, spacing} from '../../constants/theme';
+import FavoriteButton from '../shared/FavoriteButton';
 import {useNavigation} from '@react-navigation/native';
 import {SharedElement} from 'react-navigation-shared-element';
-import Card from './shared/Card/Card';
-import CardMedia from './shared/Card/CardMedia';
-import CardContent from './shared/Card/CardContent';
+import Card from '../shared/Card/Card';
+import CardMedia from '../shared/Card/CardMedia';
+import CardContent from '../shared/Card/CardContent';
 
 const CARD_WIDTH = sizes.width / 2 - (spacing.l + spacing.l / 2);
 const CARD_HEIGHT = 220;
@@ -24,14 +24,14 @@ const TripsList = ({list}) => {
               navigation.navigate('TripDetails', {trip: item});
             }}>
             <SharedElement id={`trip.${item.id}.image`} style={styles.media}>
-              <CardMedia source={item.image} />
+              <CardMedia source={item.image} borderBottomRadius />
             </SharedElement>
             <CardContent style={styles.content}>
               <View style={styles.titleBox}>
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.location}>{item.location}</Text>
               </View>
-              <FavoriteButton />
+              <FavoriteButton onPress={() => {}} />
             </CardContent>
           </Card>
         );
