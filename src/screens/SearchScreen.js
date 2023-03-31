@@ -9,16 +9,18 @@ import {SEARCH_ALL, SEARCH_HOTELS, SEARCH_PLACES} from '../data';
 
 const tabs = [
   {
-    title: 'All',
+    title: 'Todos',
     content: () => <SearchMasonry key="all" list={SEARCH_ALL} />,
   },
   {
-    title: 'Places',
+    title: '5 estrellas',
     content: () => <SearchMasonry key="places" list={SEARCH_PLACES} />,
   },
   {
-    title: 'Hotels',
+    title: 'mejor alojamiento',
     content: () => <SearchMasonry key="hotels" list={SEARCH_HOTELS} />,
+    
+   
   },
 ];
 

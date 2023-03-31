@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     marginLeft: spacing.m,
   },
   tabText: {
-    color: colors.gray,
+    color: colors.lightGray,
   },
   activeTabText: {
     color: colors.primary,

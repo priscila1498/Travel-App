@@ -6,6 +6,7 @@ import {colors, sizes} from '../constants/theme';
 import {StyleSheet, Animated} from 'react-native';
 import HomeNavigator from './HomeNavigator';
 import SearchNavigator from './SearchNavigator';
+import Ver from '../screens/Ver';
 
 const tabs = [
   {
@@ -19,6 +20,11 @@ const tabs = [
   {
     name: 'Favorite',
     screen: FavoriteScreen,
+  },
+
+  {
+    name: 'Hotels',
+    screen: Ver,
   },
 ];
 

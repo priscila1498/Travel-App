@@ -9,13 +9,14 @@ export const colors = {
   light: '#fbfbfb',
   white: '#fff',
   black: '#000',
+  blue: '#3C33FF',
 };
 
 export const shadow = {
   light: {
     shadowColor: colors.black,
     shadowRadius: 4,
-    shadowOpacity: 0.1,
+    shadowOpacity: 1,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -36,7 +37,7 @@ export const sizes = {
   width,
   height,
   title: 32,
-  h2: 24,
+  h2: 25,
   h3: 18,
   body: 14,
   caption: 12,
